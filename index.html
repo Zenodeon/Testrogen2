@@ -1,9 +1,27 @@
 <html>
-<head><title>Testrogen2.0</title></head>
-<body bgcolor = black text="#00ffff">
+<head><title>Testrogen2.0</title>
+  <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script></head>
+<body bgcolor = black text="#00ffff" onload="startTime()">
   <br>
 <h1 align=center> Yea BOII</h1><BR><hr color=#00ffff><br>
   <center> <img src=boi.jpg width="600" height="600"> </center><br><hr color=#00ffff><br>
+  <div id="txt"></div>
   <h4 align=right> -By Me , Few Mins Ago </h4>
 </body>
 </html>
